@@ -1,6 +1,7 @@
 import { Icon } from '@/components/icon';
 import { SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { type NavItem } from '@/types';
+import { SharedData, type NavItem } from '@/types';
+import { usePage } from '@inertiajs/react';
 
 export function NavFooter({
     items,
@@ -9,11 +10,18 @@ export function NavFooter({
 }: React.ComponentPropsWithoutRef<typeof SidebarGroup> & {
     items: NavItem[];
 }) {
+    const { auth } = usePage<SharedData>().props;
+    const isUser = auth.user.role !== 'admin';
+
+    const visibleItems = isUser ? items : items.filter((_, index) => index !== 1);
+
+
+
     return (
         <SidebarGroup {...props} className={`group-data-[collapsible=icon]:p-0 ${className || ''}`}>
             <SidebarGroupContent>
                 <SidebarMenu>
-                    {items.map((item) => (
+                    {visibleItems.map((item) => (
                         <SidebarMenuItem key={item.title}>
                             <SidebarMenuButton
                                 asChild

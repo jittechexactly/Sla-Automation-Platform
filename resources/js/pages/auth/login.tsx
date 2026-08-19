@@ -90,7 +90,7 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                     Or continue with{' '}
                     <a href={route('get-started-with', 'google')}>
                         <div className="border px-4 mt-3 py-1 flex flex-row items-center justify-center font-medium rounded">
-                            <i className="ri-google-line text-2xl me-2"></i>
+                            <i className="ri-google-line text-xl me-2"></i>
                             <span className='text-base'>
                                 Google
                             </span>

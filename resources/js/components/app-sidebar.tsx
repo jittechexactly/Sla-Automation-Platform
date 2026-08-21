@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { Bolt, LayoutGrid, MessageSquareMoreIcon, Recycle } from 'lucide-react';
+import { Bolt, BriefcaseConveyorBelt, LayoutGrid, MessageSquareMoreIcon, ReceiptText, Recycle, User2Icon } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -12,6 +12,22 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         url: '/dashboard',
         icon: LayoutGrid,
+    },
+    {
+        title: 'Job Management',
+        url: '/v1/job-management/add-resume',
+        icon: BriefcaseConveyorBelt,
+    },
+    {
+        title: 'Profile Management',
+        url: '/v1/job-management/profile-management',
+        icon: User2Icon,
+    },
+    ,
+    {
+        title: 'Subsricptions',
+        url: '/v1/job-management/billing',
+        icon: ReceiptText,
     },
 ];
 

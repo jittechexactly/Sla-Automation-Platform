@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Job extends Model
 {
     protected $table = 'all_jobs';
-    
+
     protected $fillable = [
         'job_source_id',
         'external_id',
@@ -37,5 +38,10 @@ class Job extends Model
     public function jobSource(): BelongsTo
     {
         return $this->belongsTo(JobSource::class);
+    }
+
+    public function matches(): HasMany
+    {
+        return $this->hasMany(JobMatch::class);
     }
 }

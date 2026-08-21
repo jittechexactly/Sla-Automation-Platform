@@ -36,4 +36,9 @@ class CandidateProfile extends Model
     {
         return $this->hasMany(Resume::class);
     }
+
+    public function jobMatches(): HasMany
+    {
+        return $this->hasMany(JobMatch::class);
+    }
 }

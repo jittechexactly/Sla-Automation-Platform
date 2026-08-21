@@ -7,7 +7,7 @@ export default function AppLogo() {
                 <Bot className="size-5 text-white dark:text-black" />
             </div>
             <div className="ml-1 grid flex-1 text-left text-sm">
-                <span className="mb-0.5 truncate leading-none font-semibold">Sla Automation</span>
+                <span className="mb-0.5 truncate leading-none font-semibold">Job Apply Automation</span>
             </div>
         </>
     );
